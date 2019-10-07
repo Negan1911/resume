@@ -1,0 +1,15 @@
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f4f4f4;
+}
+
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
