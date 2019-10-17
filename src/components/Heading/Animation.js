@@ -53,20 +53,23 @@ class Animation {
     this._container.appendChild(this._renderer.domElement)
 
     this.__render()
+    window.matchMedia('print').addListener(this.onResize.bind(this))
     window.addEventListener('resize', this.onResize.bind(this), false)
   }
 
   dispose() {
     window.removeEventListner('resize', this.onResize.bind(this))
+    window.matchMedia('print').removeListener(this.onResize.bind(this))
     this._container.removeChild(this._renderer.domElement)
     this._container = null
     this._count = 0
   }
   
   onResize({ target }) {
+    const is_print = window.matchMedia('print').matches
     const { clientWidth, clientHeight } = this._container
-    this.setCamera(clientWidth, clientHeight)
-    this.setRenderer(clientWidth, clientHeight)
+    this.setCamera(clientWidth, is_print ? 700 : clientHeight)
+    this.setRenderer(clientWidth, is_print ? 700 : clientHeight)
   } 
 
   __render() {

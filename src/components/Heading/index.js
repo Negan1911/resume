@@ -12,6 +12,11 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid #394053;
+
+  @media print {
+    height: 700px;
+    width: 100%;
+  }
 `
 
 const Article = styled.article`
@@ -22,6 +27,10 @@ const Article = styled.article`
     font-size: 82px;
     text-transform: lowercase;
     font-family: 'Major Mono Display', monospace;
+
+    @media print {
+      font-size: 60px;
+    }
   }
 `
 

@@ -5,6 +5,10 @@ import styled from 'styled-components'
 const FooterContainer = styled.section`
   padding: 60px 0;
   background: #2d2d2a;
+
+  @media print {
+    display: none;
+  }
 `
 
 export default function Footer() {

@@ -8,6 +8,10 @@ const Wrapper = styled.section`
   align-items: center;
   justify-content: center;
   background: ${p => p.background || '#f4f4f4'};
+
+  @media print {
+    padding: 100px 0;
+  }
 `
 
 const Content = styled.article`
