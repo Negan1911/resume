@@ -1,18 +1,22 @@
 import React from 'react'
 import { FooterInput, FooterContent, FooterText, FooterButton } from './Components'
 
-const form_fields = process.env.FORM_FIELDS
-  .split('&')
-  .reduce((_, el) => ({ ..._, [el.split('=')[0]]: el.split('=')[1] }), {})
-
 export default function FormContents({ onSubmit }) {
   return (
-    <FooterContent method="POST" action={process.env.FORM_URL}>
-      <FooterText>Thanks for visiting, let's stay on touch!</FooterText>
-      <FooterInput type="text" placeholder="Name" aria-label="Name" initialValue="" name={form_fields.name} />
-      <FooterInput type="email" placeholder="Email" aria-label="Email" initialValue="" name={form_fields.email} />
-      <FooterInput as="textarea" placeholder="Text" aria-label="Text" initialValue="" name={form_fields.text} />
-      <FooterButton type="submit">Send</FooterButton>
-    </FooterContent>
+    <>
+      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="text"></textarea>
+      </form>
+      <FooterContent method="post" name="contact" data-netlify="true">
+        <FooterText>Thanks for visiting, let's stay on touch!</FooterText>
+        <input type="hidden" name="form-name" value="contact" />
+        <FooterInput type="text" placeholder="Name" aria-label="Name" initialValue="" name="name" />
+        <FooterInput type="email" placeholder="Email" aria-label="Email" initialValue="" name="email" />
+        <FooterInput as="textarea" placeholder="Text" aria-label="Text" initialValue="" name="text" />
+        <FooterButton type="submit">Send</FooterButton>
+      </FooterContent>
+    </>
   )
 }
