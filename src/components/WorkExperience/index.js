@@ -4,7 +4,8 @@ import { Title, Card } from '../UI'
 
 const WorkExperience = () => <Card>
   <Title>I worked in these amazing places</Title>
-  <Company href="https://rocketinsights.com/" date_from="Jun 2019" date_to="Today :)" title="Lead Software Developer" img="rocket.png" company="Rocket Insights" />
+  <Company href="https://securityscorecard.com/" date_from="Nov 2021" date_to="Today :)" title="Staff Full Stack Engineer" img="ssc.jpg" company="SecurityScorecard" />
+  <Company href="https://rocketinsights.com/" date_from="Jun 2019" date_to="Oct 2021" title="Principal Software Engineer" img="rocket.png" company="Rocket Insights" />
   <Company href="https://shiphero.com/" date_from="Oct 2017" date_to="Aug 2019" title="Lead Software Architect" img="sh.png" company="ShipHero LLC">
     Work on projects like Endeavour, Workstation, Marketplace and SSO.
     Develop and maintain the infrastructure and research for technologies that can improve the product quality.
